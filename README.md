@@ -64,7 +64,7 @@ Web upload (demo & staff view)  ────────────────
 ## Running locally
 
 ```bash
-git clone https://github.com/rynclick/pahami
+git clone https://github.com/rynclick/Pahami
 cd pahami
 composer install
 cp env .env        # fill in DB, META_API_KEY, BASETEN_API_KEY, FONNTE_TOKEN
