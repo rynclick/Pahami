@@ -89,7 +89,7 @@ For context only: I previously built [PTSP Online](https://ptsp.pta-yogyakarta.g
 
 ## Author
 
-**Ryan Taufik** — Religious High Court of Yogyakarta, Indonesia · [GitHub](https://github.com/rynclick) · [LinkedIn](https://linkedin.com/in/ryan-taufik-7462a348)
+Religious High Court of Yogyakarta, Indonesia · [GitHub](https://github.com/rynclick) · [LinkedIn](https://linkedin.com/in/ryan-taufik-7462a348)
 
 ## License
 
