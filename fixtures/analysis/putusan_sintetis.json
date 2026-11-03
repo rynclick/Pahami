@@ -1,0 +1,79 @@
+{
+    "jenis_dokumen": "putusan",
+    "jenis_perkara": "cerai_gugat",
+    "jenis_perkara_teks": "Cerai Gugat",
+    "nomor_perkara": "456/Pdt.G/2026/PA.Wt",
+    "pengadilan": "Pengadilan Agama Wates",
+    "penerima_adalah": "tidak_jelas",
+    "sidang": {
+        "tanggal": null,
+        "jam": null,
+        "tempat": null
+    },
+    "kutipan": {
+        "nomor_perkara": "Nomor 456/Pdt.G/2026/PA.Wt",
+        "pengadilan": "Pengadilan Agama Wates",
+        "sidang_tanggal": null,
+        "sidang_jam": null,
+        "penerima_adalah": null
+    },
+    "ringkasan_awam": "Ini putusan Pengadilan Agama Wates dalam perkara cerai gugat antara Siti Contoh dan Budi Fiktif. Pengadilan sudah memutus perkara ini.",
+    "yang_harus_dilakukan": [
+        "Simpan putusan ini",
+        "Tanyakan ke PTSP kapan akta cerai bisa diambil"
+    ],
+    "dokumen_fisik_dibawa": [
+        "KTP asli",
+        "salinan putusan ini"
+    ],
+    "yang_perlu_disiapkan": [],
+    "risiko_jika_diabaikan": "Tanpa akta cerai, Anda tidak punya bukti resmi perceraian.",
+    "pertanyaan_lanjutan_yang_umum": [
+        "Kapan putusan berkekuatan hukum tetap?",
+        "Apa itu rekonvensi?",
+        "Bagaimana mengambil akta cerai?"
+    ],
+    "tingkat_keyakinan": "tinggi",
+    "catatan_ketidakjelasan": null,
+    "istilah_hukum": [
+        {
+            "istilah": "Amar",
+            "arti": "bagian akhir putusan yang berisi keputusan hakim"
+        },
+        {
+            "istilah": "Rekonvensi",
+            "arti": "gugatan balik dari pihak yang digugat"
+        },
+        {
+            "istilah": "Verstek",
+            "arti": "putusan tanpa kehadiran pihak yang digugat"
+        },
+        {
+            "istilah": "Petitum",
+            "arti": "daftar permintaan penggugat kepada hakim"
+        }
+    ],
+    "amar_ringkas": "Pengadilan mengabulkan gugatan cerai Penggugat dan menolak gugatan balik Tergugat.",
+    "apakah_sudah_inkracht_dapat_dinilai": null,
+    "langkah_setelah_putusan": [
+        "Akta cerai dapat diambil di PTSP setelah putusan berkekuatan hukum tetap.",
+        "Ada tenggat banding 14 hari sejak putusan diucapkan atau diberitahukan."
+    ],
+    "bagian_putusan": {
+        "duduk_perkara": "Penggugat meminta cerai karena sering bertengkar dan sudah pisah rumah satu tahun.",
+        "petitum": [
+            "Mengabulkan gugatan Penggugat",
+            "Menjatuhkan talak satu ba'in sughra Tergugat terhadap Penggugat"
+        ],
+        "pertimbangan_utama": [
+            "Hakim menilai rumah tangga sudah pecah dan tidak bisa didamaikan."
+        ],
+        "amar": [
+            "Dalam Konvensi: mengabulkan gugatan Penggugat",
+            "Dalam Rekonvensi: menolak gugatan Penggugat Rekonvensi",
+            "Membebankan biaya perkara kepada Penggugat"
+        ],
+        "kutipan_amar": "MENGADILI: Dalam Konvensi 1. Mengabulkan gugatan Penggugat",
+        "rekonvensi": "Tergugat mengajukan gugatan balik soal nafkah anak; gugatan balik itu ditolak."
+    }
+}

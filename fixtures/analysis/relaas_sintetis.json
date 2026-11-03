@@ -1,0 +1,54 @@
+{
+    "jenis_dokumen": "relaas_panggilan",
+    "jenis_perkara": "cerai_gugat",
+    "jenis_perkara_teks": "Cerai Gugat",
+    "nomor_perkara": "123/Pdt.G/2026/PA.Btl",
+    "pengadilan": "Pengadilan Agama Bantul",
+    "penerima_adalah": "tergugat",
+    "sidang": {
+        "tanggal": "2026-11-10",
+        "jam": "09.00 WIB",
+        "tempat": "Ruang Sidang 1 Pengadilan Agama Bantul"
+    },
+    "kutipan": {
+        "nomor_perkara": "Nomor 123/Pdt.G/2026/PA.Btl",
+        "pengadilan": "Pengadilan Agama Bantul",
+        "sidang_tanggal": "Selasa / 10 November 2026",
+        "sidang_jam": "Pukul : 09.00 WIB",
+        "penerima_adalah": "Budi Contoh bin Fiktif, sebagai Tergugat"
+    },
+    "ringkasan_awam": "Ini surat panggilan sidang dari Pengadilan Agama Bantul untuk Anda sebagai Tergugat dalam perkara cerai gugat. Anda diminta datang ke sidang pada tanggal yang tertulis.",
+    "yang_harus_dilakukan": [
+        "Datang ke Pengadilan Agama Bantul pada 10 November 2026 jam 09.00 WIB",
+        "Bawa surat panggilan ini dan KTP"
+    ],
+    "dokumen_fisik_dibawa": [
+        "KTP asli",
+        "surat panggilan ini"
+    ],
+    "yang_perlu_disiapkan": [
+        "jawaban tertulis (boleh lisan)"
+    ],
+    "risiko_jika_diabaikan": "Jika tidak datang, sidang bisa tetap berjalan tanpa Anda.",
+    "pertanyaan_lanjutan_yang_umum": [
+        "Apakah saya harus datang sendiri?",
+        "Bagaimana jika saya berhalangan?",
+        "Apa itu jawaban tertulis?"
+    ],
+    "tingkat_keyakinan": "tinggi",
+    "catatan_ketidakjelasan": null,
+    "istilah_hukum": [
+        {
+            "istilah": "Relaas",
+            "arti": "surat resmi dari juru sita yang memberi tahu Anda untuk datang ke sidang"
+        },
+        {
+            "istilah": "Tergugat",
+            "arti": "pihak yang digugat"
+        }
+    ],
+    "amar_ringkas": null,
+    "apakah_sudah_inkracht_dapat_dinilai": null,
+    "langkah_setelah_putusan": null,
+    "bagian_putusan": null
+}

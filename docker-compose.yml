@@ -1,0 +1,64 @@
+services:
+  app:
+    build: ./docker
+    container_name: pahami-app
+    # Host port. On a server put the app behind a proxy/tunnel only: PAHAMI_HTTP_PORT=127.0.0.1:8090
+    ports:
+      - "${PAHAMI_HTTP_PORT:-8090}:80"
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mariadb:10.11
+    container_name: pahami-db
+    environment:
+      MARIADB_DATABASE: pahami
+      MARIADB_USER: pahami
+      MARIADB_PASSWORD: pahami
+      MARIADB_ROOT_PASSWORD: pahami_root
+    # Reachable from this machine only (database tools); never from the network.
+    ports:
+      - "${PAHAMI_DB_PORT:-127.0.0.1:3390}:3306"
+    volumes:
+      - pahami-db:/var/lib/mysql
+      - ./docker/db-init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  # Cron replacement for local development: sends due reminders every 5 minutes
+  # (CLAUDE.md §4). On a server use a crontab entry instead:
+  #   */5 * * * * cd /path/to/pahami && php spark reminders:send
+  scheduler:
+    build: ./docker
+    container_name: pahami-scheduler
+    user: www-data
+    working_dir: /var/www/html
+    # Reminders every 5 minutes; media older than 7 days purged every hour (12 rounds).
+    # Waits until the app container has installed vendor/ and run the migrations.
+    command: sh -c "until [ -f vendor/autoload.php ]; do sleep 5; done; sleep 20; i=0; while true; do php spark reminders:send; [ $$((i % 12)) -eq 0 ] && php spark media:purge --days=7; i=$$((i + 1)); sleep 300; done"
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # Public HTTPS URL for the Fonnte webhook during local development.
+  # Start with: docker compose --profile tunnel up -d tunnel
+  # The URL (https://<random>.trycloudflare.com) is in: docker logs pahami-tunnel
+  tunnel:
+    image: cloudflare/cloudflared:2025.1.0
+    container_name: pahami-tunnel
+    command: tunnel --no-autoupdate --url http://app:80
+    depends_on:
+      - app
+    profiles:
+      - tunnel
+
+volumes:
+  pahami-db:
