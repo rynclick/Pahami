@@ -10,7 +10,7 @@ All work below was written during the Meta Global AI Developer Hackathon buildin
 - `DocumentAnalyzer`: prompt in `app/Prompts/document_analyzer.txt`, today's date (Asia/Jakarta) injected, strict schema (`DocumentSchema`, also sent as `response_format`), one retry with errors appended, putusan fields.
 - `Verifier`: deterministic checks of date, time, case number and court against the model's quotes; confidence derived from the checks. Minimal `CourtDirectory` (six DIY courts, names and codes).
 - `php spark document:analyze`; verified on the relaas photo (Meta + Baseten) and a 14-page verdict PDF (Meta). Baseten rejects PDF file parts (HTTP 400).
-- `WhatsAppFormatter` (§7 flow 2: explanation, checklist with reminder promise or date confirmation question, follow-up; "tidak terbaca" on low confidence) with tests.
+- `WhatsAppFormatter` (flow 2: explanation, checklist with reminder promise or date confirmation question, follow-up; "tidak terbaca" on low confidence) with tests.
 - `/demo` page: upload (CSRF, type/size validation), model choice, WhatsApp-style reply, Verifier table, model call log, JSON; stored as `documents` with `source=web`. Feature tests.
 - `PdfPageSelector`: long PDFs cut to opening page, duduk perkara, petitum, rekonvensi, pertimbangan hukum and amar (fixes the amar of a 68-page verdict being past Meta's 50-page render limit; 132,760 → 31,112 tokens). PDF → PNG fallback for Baseten with its 8-image cap and page priority.
 - Schema: `bagian_putusan` (duduk perkara, petitum, pertimbangan utama, amar, kutipan amar, rekonvensi) and `istilah_hukum` glossary; shown on `/demo`, up to 3 terms in the WhatsApp checklist.
@@ -61,3 +61,6 @@ All work below was written during the Meta Global AI Developer Hackathon buildin
 ## 2026-11-03
 - README: new section "Muse Spark vs Muse Spark Open in Pahami" (hosting and data, PDF vs page images, voice, measured speed and quality, how to switch) and a step-by-step "Install and try it" guide with a 10-step walkthrough for judges and troubleshooting (verified on the running stack: 186 tests pass, Meta and Baseten answer); verdicts to try come from the PTA Yogyakarta page of the Supreme Court directory; repeated sections merged.
 - README banner (`.github/assets/banner.svg` source, `banner.png` rendered at 2×).
+
+## 2026-11-04
+- README: badges under the title (tests, license, PHP, CodeIgniter, Docker, Meta Model API, WhatsApp) and an architecture diagram (`.github/assets/architecture.svg` source, `architecture.png` rendered at 2×); the text diagram stays in a collapsible section.
