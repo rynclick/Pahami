@@ -4,6 +4,16 @@
 
 # Pahami
 
+<p>
+  <a href="#tests-command-line-tools-and-real-whatsapp"><img src="https://img.shields.io/badge/tests-186%20passing-brightgreen" alt="tests: 186 passing"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="license: MIT"></a>
+  <img src="https://img.shields.io/badge/PHP-8.2+-777BB4?logo=php&amp;logoColor=white" alt="PHP 8.2+">
+  <img src="https://img.shields.io/badge/CodeIgniter-4.7-EF4223?logo=codeigniter&amp;logoColor=white" alt="CodeIgniter 4.7">
+  <img src="https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&amp;logoColor=white" alt="Docker Compose">
+  <a href="#how-it-uses-metas-models"><img src="https://img.shields.io/badge/Meta%20Model%20API-Muse%20Spark%20%2B%20Voice%20Transcribe-0866FF?logo=meta&amp;logoColor=white" alt="Meta Model API: Muse Spark + Muse Voice Transcribe"></a>
+  <img src="https://img.shields.io/badge/WhatsApp-Fonnte-25D366?logo=whatsapp&amp;logoColor=white" alt="WhatsApp via Fonnte">
+</p>
+
 **A WhatsApp AI agent that helps people with a case at Indonesia’s Religious Courts understand their court letters, keep their hearing dates, and prepare the right documents.**
 
 Built for the [Meta Global AI Developer Hackathon](https://cerebralvalley.ai/e/meta-ai-developer-hackathon) (Oct 26 – Nov 4, 2026) · Track: Indie Developer · Theme: *Build for Your World*
@@ -212,6 +222,13 @@ Each field ends up `ok`, `tidak_pasti` (uncertain) or `kosong` (not in the docum
 
 ## Architecture
 
+<p align="center">
+  <img src=".github/assets/architecture.png" alt="How Pahami works: WhatsApp (through the Fonnte webhook) and the browser simulator both feed InboundHandler. Photos and PDFs go through PdfPageSelector, DocumentAnalyzer (Muse Spark or Muse Spark Open), Verifier (plain PHP), WhatsAppFormatter with ChecklistBuilder, and ReminderPlanner. Voice notes go through Transcriber (Muse Voice Transcribe); text goes to commands or ConversationAgent (Muse Spark), which hands out-of-scope questions to a court officer. Replies go out through FonnteClient or SimulatorClient. MariaDB holds the state, and a scheduler container sends reminders every 5 minutes and purges media every hour." width="100%">
+</p>
+
+<details>
+<summary>Text version of the diagram</summary>
+
 ```
 WhatsApp ──Fonnte webhook──▶ Webhook\Fonnte ──(answers at once, runs in background)──▶ fonnte:process
 Browser  ──/demo/chat──────▶ DemoChat ─────────────────────────────────────────────────┐   │
@@ -227,6 +244,8 @@ Browser  ──/demo/chat──────▶ DemoChat ────────
 
 scheduler container: reminders:send every 5 min · media:purge --days=7 every hour
 ```
+
+</details>
 
 Main files:
 
